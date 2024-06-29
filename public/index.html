@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kirby-gif ui</title>
+  <link href="./styles.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main class="container py-2 h-100 d-flex align-items-center">
+    <form id="form" class="mx-auto my-3 col-6">
+      <div class="row g-3">
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-text">/</div>
+            <input type="text" name="name" placeholder="Command name" class="form-control" pattern="[_a-z]{1,32}"
+              title="no la vivan con el nombre loco" required />
+          </div>
+        </div>
+        <div class="col-6">
+          <input type="text" , name="description" placeholder="Command description" class="form-control"
+            pattern="[a-zA-Z ]{1,32}" title="letters only" required />
+        </div>
+
+        <div class="col-6">
+          <select id="select-type" name="type" id="command-type-select" class="form-select" required>
+            <option value="" selected>Command type</option>
+            <option value="1">GIF</option>
+            <option value="2">AUDIO</option>
+          </select>
+        </div>
+
+        <div id="input-container" class="col-6"></div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary float-end">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
+
+<template id="url-input-template">
+  <input type="url" name="url" id="url-input" class="form-control" placeholder="https://example.com"
+    pattern="https://tenor.com.*" title="Must be from tenor.com" required />
+</template>
+
+<template id="audio-input-template">
+  <input type="file" id="file-input" name="file" class="form-control" accept="audio/mpeg" required />
+</template>
+
+<script src="./js/index.js"></script>
+
+</html>
